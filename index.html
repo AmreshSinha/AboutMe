@@ -640,7 +640,42 @@
             </div>
         </div>
     
+<!-- NightMode -->
+<script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+        _paq.push(["setCookieDomain", "*.amir.ovh"]);
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+        (function () {
+            var u = "//analytics.treudler.net/";
+            _paq.push(["setTrackerUrl", u + "matomo.php"]);
+            _paq.push(["setSiteId", "3"]);
+            var d = document,
+                g = d.createElement("script"),
+                s = d.getElementsByTagName("script")[0];
+            g.type = "text/javascript";
+            g.async = true;
+            g.defer = true;
+            g.src = u + "matomo.js";
+            s.parentNode.insertBefore(g, s);
+        })();
 
+        $(function () {
+            $(".switcherMood").on("click", function () {
+                if (!$(".wrapper").hasClass("dark")) {
+                    $(".wrapper").addClass("dark");
+                    $(".profile-card").css("background", "#09192e");
+                    $(".switcherMood i").attr("class", "fas fa-sun");
+                } else {
+                    $(".wrapper").removeClass("dark");
+                    $(".profile-card").css("background", "#ffff");
+                    $(".switcherMood i").attr("class", "fas fa-moon");
+                }
+            });
+        });
+    </script>
 
 <!-- Cloudflare Web Analytics -->
 <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;717e095309084bee9f821eb9c9444bae&quot;}">
