@@ -240,11 +240,54 @@
         .profile-card__name {
             font-weight: 700;
 
-            font-size: 24px;
+            font-size: 50px;
 
             color: #6944ff;
 
             margin-bottom: 15px;
+        }
+
+        .lol {
+        	/* letter-spacing: 0; */
+        	/* display: block; */
+        	/* margin: 0 auto; */
+        	text-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
+            background-size: 50px 50px;
+            background-color: violet;
+            background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                          transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, .2) 75%,
+                          transparent 75%, transparent);
+            background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                          transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                          transparent 75%, transparent);
+            background-image: linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                          transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                          transparent 75%, transparent);
+        	-webkit-background-clip: text;
+            background-clip: text;
+
+            /* Animate Background Image */
+
+        	-webkit-text-fill-color: transparent;
+        	-webkit-animation: aitf 10s linear infinite;
+            animation: aitf 10s linear infinite;
+
+            /* Activate hardware acceleration for smoother animations */
+
+        	-webkit-transform: translate3d(0,0,0);
+        	-webkit-backface-visibility: hidden;
+            transform: translate3d(0,0,0);
+            backface-visibility: translate3d(0,0,0);
+        }
+
+        @-webkit-keyframes aitf {
+        	0% { background-position: 0% 50%; }
+        	100% { background-position: 100% 50%; }
+        }
+
+        @keyframes aitf{
+            0% { background-position: 0% 50%; }
+        	100% { background-position: 100% 50%; }
         }
 
         .profile-card__txt {
@@ -583,11 +626,11 @@
         <div class="wrapper">
             <div class="profile-card js-profile-card">
                 <div class="profile-card__img">
-                    <img src="icon.png" alt="profile card">
+                    <img src="https://avatars.githubusercontent.com/u/35039730" alt="profile card">
                 </div>
 
                 <div class="profile-card__cnt js-profile-cnt">
-                    <div class="profile-card__name">APS</div>
+                    <div class="profile-card__name lol">APS</div>
 
                     <div class="profile-card__txt"><strong>Indian • 18 Years Old • Student/Developer • ML/AI & Computer Vision Enthusiast</strong></div>
                     <div class="profile-card-inf">
@@ -646,6 +689,8 @@
         $(function () {
             $(".switcherMood").on("click", function () {
                 if (!$(".wrapper").hasClass("dark")) {
+                    $(".lol").css("background-color", 'gray')
+                    $(".lol").css("text-shadow", '0 0 10px rgba(255, 255, 255, 0.5)')
                     $(".wrapper").addClass("dark");
                     $(".profile-card").css("background", "#09192e");
                     $(".switcherMood i").attr("class", "fas fa-sun");
@@ -653,6 +698,8 @@
                     $(".wrapper").removeClass("dark");
                     $(".profile-card").css("background", "#ffff");
                     $(".switcherMood i").attr("class", "fas fa-moon");
+                    $(".lol").css("background-color", 'violet')
+                    $(".lol").css("text-shadow", '0 0 80px rgba(0, 0, 0, 0.5)')
                 }
             });
         });
