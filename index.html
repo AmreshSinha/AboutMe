@@ -690,7 +690,6 @@
             $(".switcherMood").on("click", function () {
                 if (!$(".wrapper").hasClass("dark")) {
                     $(".lol").css("background-color", 'gray')
-                    $(".lol").css("text-shadow", '0 0 10px rgba(255, 255, 255, 0.5)')
                     $(".wrapper").addClass("dark");
                     $(".profile-card").css("background", "#09192e");
                     $(".switcherMood i").attr("class", "fas fa-sun");
@@ -699,7 +698,6 @@
                     $(".profile-card").css("background", "#ffff");
                     $(".switcherMood i").attr("class", "fas fa-moon");
                     $(".lol").css("background-color", 'violet')
-                    $(".lol").css("text-shadow", '0 0 80px rgba(0, 0, 0, 0.5)')
                 }
             });
         });
